@@ -1,0 +1,29 @@
+import {test} from "@playwright/test"
+test("mouse action doubleclick",async({page})=>{
+// click
+
+await page.goto("https://demoapps.qspiders.com/ui/button?sublist=0")
+await page.locator('//button[@id="btn"]').click()
+await page.waitForTimeout(6000)
+
+//right click
+await page.locator('//a[text()="Right Click"]').click()
+ await page.locator('//button[@id="btn_a"]').click({button:'right'})
+await page.waitForTimeout(6000)
+
+//double click
+await page.goto("https://demoapps.qspiders.com/ui/button/buttonDouble?sublist=2")
+await page.locator('#btn_a').dblclick()
+
+await page.waitForTimeout(5000)
+
+//disabled or hidden element
+
+await page.goto("https://demoapps.qspiders.com/ui/button/buttonDisabled?sublist=4")
+//await page.locator('//input[@id="submit"]').click({force:true})
+await page.locator('//input[@id="submit"]').dispatchEvent('click')
+await page.waitForTimeout(5000)
+
+
+
+})
