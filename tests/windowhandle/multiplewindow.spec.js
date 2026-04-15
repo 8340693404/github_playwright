@@ -7,11 +7,15 @@ test("switch window",async({browser})=>{
         page.waitForEvent('popup'),
      
       page.click("//button[text()='Shop Now']")])
+
+//       page.waitForEvent('popup') listens for the new window that opens when you click the button.
+// Promise.all ensures the click triggers the popup.
+
    await window2.locator("//button[text()='Add to Cart']").click()
 
    //assert ..validate
    let title1 =await page.title()
-   await expect(await window2.title()).not.toBe(title1)
+   await expect(window2.title()).not.toBe(title1)
 
 
 })

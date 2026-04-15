@@ -13,11 +13,11 @@ import { test } from '@playwright/test';
 //screenshot paticular
 
 
-test('take screenshot', async ({ page }) => {
+test.only('take screenshot2', async ({ page }) => {
    await page.goto("https://demo.opencart.com/");
 
    // Take full page screenshot
-  await page.screenshot({ path: 'screenshot/homepage.png' })
+  await page.screenshot({ path: 'screenshot/homepage5.png' })
 
 
 
@@ -32,7 +32,7 @@ test('take full screenshot', async ({ page }) => {
 
    // Take full page screenshot
 
-  await page.screenshot({ path: 'screenshot/fullpagemyntra.png', fullPage: true })
+  await page.screenshot({ path: 'screenshot/fullpagemyntra2.png', fullPage: true })
 
 
 
@@ -40,7 +40,7 @@ test('take full screenshot', async ({ page }) => {
 
  // screenshot specific element
 
- test.only('take specific element screenshot', async ({ page }) => {
+ test('take specific element screenshot', async ({ page }) => {
    await page.goto("https://www.amazon.in/");
    //await page.waitForTimeout(4000)
 
